@@ -13,7 +13,7 @@ const MONGO_URI= process.env.MONGO_URI || "";
 // Middleware
 app.use(
     cors({
-      origin: "https://sprint-8-improcode.vercel.app/api/maps", 
+      origin: "https://sprint-8-improcode.vercel.app/maps", 
       methods: "GET,POST,PUT,DELETE",
       allowedHeaders: "Content-Type,Authorization", 
     })
