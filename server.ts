@@ -13,7 +13,7 @@ const MONGO_URI= process.env.MONGO_URI || "";
 // Middleware
 app.use(
     cors({
-      origin: "*", 
+      origin: "https://sprint-8-improcode.vercel.app/", 
       methods: "GET,POST,PUT,DELETE",
       allowedHeaders: "Content-Type,Authorization", 
     })
@@ -21,7 +21,10 @@ app.use(
   app.use(express.json());
 
 // Conectar a MongoDB Atlas
-
+console.log('Connecting to:', MONGO_URI); // Debug line
+mongoose.connect(MONGO_URI)
+  .then(() => console.log('Database connected'))
+  .catch(err => console.error('Error connecting to the database:', err));
 mongoose.connect(MONGO_URI)
 .then(() => console.log('Database connected'))
 .catch(err => console.error('Error connecting to the database:', err));
